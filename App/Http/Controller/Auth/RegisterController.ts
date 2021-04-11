@@ -1,6 +1,7 @@
 import Hash from "Elucidate/Hashing/Hash";
 import FormRequest from "Elucidate/Validator/FormRequest"
 import { Request, Response } from "Elucidate/HttpContext";
+import HttpResponse from "Elucidate/HttpContext/ResponseType";
 
 class RegisterController {
   Auth: any;
@@ -23,7 +24,7 @@ class RegisterController {
     if (validation.success) {
       return await this.create(req.body, res);
     } else {
-      return res.status(404).json(validation);
+      return HttpResponse.BAD_REQUEST(res, validation);
     }
   };
 
@@ -52,14 +53,14 @@ class RegisterController {
     return await this.Auth.createUser(data)
       .then(async (user: object) => {
         let token = await this.Auth.generateToken(user);
-        return res.status(200).send({ auth: true, token: token });
+        return HttpResponse.OK(res, { auth: true, token: token });
       })
-      .catch((error: { msg: any; payload: any }) => {
-        return res.status(500).send({
+      .catch((err: { msg: any; payload: any }) => {
+        return HttpResponse.UNAUTHORIZED(res,{
           auth: false,
-          msg: error.msg,
-          error: error.payload,
-        });
+          msg: err.msg,
+          error: err.payload,
+        })
       });
   };
 }
