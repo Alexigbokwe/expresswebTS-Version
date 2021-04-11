@@ -38,7 +38,7 @@ class LoginController {
     return await this.Auth.processLogin(data)
       .then(async (user: any) => {
         let token = await this.Auth.generateToken(user);
-        return res.status(200).send({ auth: true, token: token });
+        return HttpResponse.OK(res, { auth: true, token: token });
       })
       .catch((err: { msg: any; payload: any }) => {
         return HttpResponse.UNAUTHORIZED(res,{
