@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const ENV_1 = tslib_1.__importDefault(require("Elucidate/ENV"));
+const ENV_1 = tslib_1.__importDefault(require("expresswebcorets/lib/ENV"));
+const path_1 = tslib_1.__importDefault(require("path"));
 exports.default = {
     /*
     |--------------------------------------------------------------------------
@@ -23,9 +24,13 @@ exports.default = {
             database: ENV_1.default("DB_DATABASE"),
         },
         migrations: {
-            directory: __dirname + "/../../Database/Migrations/",
+            directory: path_1.default.join(__dirname, '../Database/Migrations/'),
             tableName: "migrations",
-            stub: __dirname + "/../../Database/Migrations/migrationLayout.stub",
+            stub: path_1.default.join(__dirname, '../Database/Migrations/migrationLayout.stub'),
+            extension: 'js'
+        },
+        seeds: {
+            directory: path_1.default.join(__dirname, '../Database/Seeds/'),
         },
     },
     /*
@@ -50,9 +55,13 @@ exports.default = {
             database: ENV_1.default("DB_DATABASE"),
         },
         migrations: {
-            directory: __dirname + "/../../Database/Migrations/",
+            directory: path_1.default.join(__dirname, '../Database/Migrations/'),
             tableName: "migrations",
-            stub: __dirname + "/../../Database/Migrations/migrationLayout.stub",
+            stub: path_1.default.join(__dirname, '../Database/Migrations/migrationLayout.stub'),
+            extension: 'js'
+        },
+        seeds: {
+            directory: path_1.default.join(__dirname, '../Database/Seeds/'),
         },
     },
     /*

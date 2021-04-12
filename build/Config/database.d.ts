@@ -12,6 +12,10 @@ declare const _default: {
             directory: string;
             tableName: string;
             stub: string;
+            extension: string;
+        };
+        seeds: {
+            directory: string;
         };
     };
     pg: {
@@ -27,6 +31,10 @@ declare const _default: {
             directory: string;
             tableName: string;
             stub: string;
+            extension: string;
+        };
+        seeds: {
+            directory: string;
         };
     };
     mongoose: {

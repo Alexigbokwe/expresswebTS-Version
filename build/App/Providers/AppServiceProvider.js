@@ -11,6 +11,8 @@ class AppServiceProvicer extends ServiceProvider_1.default {
      */
     boot() {
         //Authenticator
+        //let database = this.app.use("DatabaseServiceProvider")
+        //console.log(database.model.knex);
     }
     /**
      * Register any application services.

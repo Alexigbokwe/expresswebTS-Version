@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const Hash_1 = tslib_1.__importDefault(require("Elucidate/Hashing/Hash"));
 const FormRequest_1 = tslib_1.__importDefault(require("Elucidate/Validator/FormRequest"));
+const ResponseType_1 = tslib_1.__importDefault(require("Elucidate/HttpContext/ResponseType"));
 class RegisterController {
     constructor(Auth) {
         /*
@@ -20,7 +21,7 @@ class RegisterController {
                 return yield this.create(req.body, res);
             }
             else {
-                return res.status(404).json(validation);
+                return ResponseType_1.default.BAD_REQUEST(res, validation);
             }
         });
         /**
@@ -34,13 +35,13 @@ class RegisterController {
             return yield this.Auth.createUser(data)
                 .then((user) => tslib_1.__awaiter(this, void 0, void 0, function* () {
                 let token = yield this.Auth.generateToken(user);
-                return res.status(200).send({ auth: true, token: token });
+                return ResponseType_1.default.OK(res, { auth: true, token: token });
             }))
-                .catch((error) => {
-                return res.status(500).send({
+                .catch((err) => {
+                return ResponseType_1.default.UNAUTHORIZED(res, {
                     auth: false,
-                    msg: error.msg,
-                    error: error.payload,
+                    msg: err.msg,
+                    error: err.payload,
                 });
             });
         });

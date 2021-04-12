@@ -1,5 +1,6 @@
 "use strict";
-import env from "Elucidate/ENV";
+import env from "expresswebcorets/lib/ENV";
+import path from "path";
 export default {
   /* 
   |--------------------------------------------------------------------------
@@ -21,9 +22,13 @@ export default {
       database: env("DB_DATABASE"),
     },
     migrations: {
-      directory: __dirname + "/../../Database/Migrations/",
+      directory: path.join(__dirname, '../Database/Migrations/'),
       tableName: "migrations",
-      stub: __dirname + "/../../Database/Migrations/migrationLayout.stub",
+      stub:  path.join(__dirname, '../Database/Migrations/migrationLayout.stub'),
+      extension: 'js'
+    },
+    seeds: {
+      directory:  path.join(__dirname, '../Database/Seeds/'),
     },
   },
   /*
@@ -48,9 +53,13 @@ export default {
       database: env("DB_DATABASE"),
     },
     migrations: {
-      directory: __dirname + "/../../Database/Migrations/",
+      directory: path.join(__dirname, '../Database/Migrations/'),
       tableName: "migrations",
-      stub: __dirname + "/../../Database/Migrations/migrationLayout.stub",
+      stub:  path.join(__dirname, '../Database/Migrations/migrationLayout.stub'),
+      extension: 'js'
+    },
+    seeds: {
+      directory:  path.join(__dirname, '../Database/Seeds/'),
     },
   },
   /*
