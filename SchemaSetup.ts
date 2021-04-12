@@ -1,6 +1,5 @@
 "use strict";
 import env from "expresswebcorets/lib/ENV";
-//@ts-ignore
 import config from "./Config/database";
 
 class migration {
