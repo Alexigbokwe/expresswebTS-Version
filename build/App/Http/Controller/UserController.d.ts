@@ -3,6 +3,6 @@ import Authenticator from "Elucidate/Auth/Authenticator";
 declare class UserController {
     Auth: Authenticator;
     constructor(Authenticator: Authenticator);
-    index(req: Request, res: Response, next: NextFunction): any;
+    index(req: Request, res: Response, next: NextFunction): Promise<any>;
 }
 export default UserController;
