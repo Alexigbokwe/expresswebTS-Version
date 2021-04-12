@@ -9,6 +9,8 @@ class AppServiceProvicer extends ServiceProvider {
    */
   public boot() {
     //Authenticator
+    //let database = this.app.use("DatabaseServiceProvider")
+    //console.log(database.model.knex);
   }
 
   /**
