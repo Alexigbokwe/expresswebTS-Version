@@ -1,14 +1,14 @@
 {
   "extends": "./node_modules/expresswebjs-preset-ts/tsconfig",
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./build",  
-    "rootDir": "./",              
-    "baseUrl": "./",                     
+    "rootDir": "./", 
     "paths": {
       "App/*":["./App/*"],
       "Config/*":["./Config/*"],
       "Database/*":["./Database/*"],
-      "Routes/*":["Routes/*"],
+      "Routes/*":["./Routes/*"],
       "Elucidate/*":["./node_modules/expresswebcorets/lib/*"],
     }
   }
