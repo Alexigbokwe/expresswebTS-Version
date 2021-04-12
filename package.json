@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "expresswebcorets": "^1.0.11",
-    "expresswebjs-preset-ts": "^1.0.0",
+    "expresswebjs-preset-ts": "^1.0.3",
     "mongoose": "^5.11.9",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
