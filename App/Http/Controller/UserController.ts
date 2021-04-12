@@ -12,7 +12,6 @@ class UserController {
   }
   public async index(req: Request, res: Response, next: NextFunction) {
     try {
-      // UserModel.query().withGraphFetched
       await UserModel.query().then(users => {
         HttpResponse.OK(res, users);
       }).catch(err => {
