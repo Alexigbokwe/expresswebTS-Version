@@ -10,7 +10,6 @@ class UserController {
     index(req, res, next) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                // UserModel.query().withGraphFetched
                 yield UserModel_1.default.query().then(users => {
                     ResponseType_1.default.OK(res, users);
                 }).catch(err => {
