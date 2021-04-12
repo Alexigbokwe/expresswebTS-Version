@@ -25,7 +25,7 @@ export default {
       directory: path.join(__dirname, '../Database/Migrations/'),
       tableName: "migrations",
       stub:  path.join(__dirname, '../Database/Migrations/migrationLayout.stub'),
-      extension: 'ts'
+      extension: 'js'
     },
     seeds: {
       directory:  path.join(__dirname, '../Database/Seeds/'),
@@ -56,7 +56,7 @@ export default {
       directory: path.join(__dirname, '../Database/Migrations/'),
       tableName: "migrations",
       stub:  path.join(__dirname, '../Database/Migrations/migrationLayout.stub'),
-      extension: 'ts'
+      extension: 'js'
     },
     seeds: {
       directory:  path.join(__dirname, '../Database/Seeds/'),

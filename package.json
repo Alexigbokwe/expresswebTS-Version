@@ -17,7 +17,7 @@
     "build": "rimraf ./build && npm run compile",
     "compile": "tsc -p .",
     "post:compile": "ef-tspm",
-    "api-knex": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' knex --knexfile=./knexfile.ts"
+    "api-knex": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' knex --knexfile=./SchemaSetup.ts"
   },
   "keywords": [],
   "author": "",
