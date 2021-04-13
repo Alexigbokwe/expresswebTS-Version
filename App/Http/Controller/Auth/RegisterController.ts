@@ -1,13 +1,14 @@
 import Hash from "Elucidate/Hashing/Hash";
-import FormRequest from "Elucidate/Validator/FormRequest"
+import FormRequest from "Elucidate/Validator/FormRequest";
 import { Request, Response } from "Elucidate/HttpContext";
 import HttpResponse from "Elucidate/HttpContext/ResponseType";
+import Authenticator from "Elucidate/Auth/Authenticator";
 
 class RegisterController {
-  Auth: any;
+  protected Auth: Authenticator;
 
-  constructor(Auth: any) {
-    this.Auth = Auth;
+  constructor(Authenticator:Authenticator) {
+    this.Auth = Authenticator;
   }
 
   /*
@@ -35,8 +36,11 @@ class RegisterController {
    */
   private async validator(record: object) {
     return await FormRequest.make(record, {
-      first_name: "required|string|max:255",
-      last_name: "required|string|max:255",
+      // first_name: "required|string|max:255",
+      // last_name: "required|string|max:255",
+      // email: "required|string|email|max:255",
+      // password: "required|string|min:8",
+      username: "required|string|max:255",
       email: "required|string|email|max:255",
       password: "required|string|min:8",
     });
@@ -51,16 +55,16 @@ class RegisterController {
   private create = async (data: object, res: Response) => {
     data["password"] = await Hash.make(data["password"]);
     return await this.Auth.createUser(data)
-      .then(async (user: object) => {
+      .then(async (user: any) => {
         let token = await this.Auth.generateToken(user);
         return HttpResponse.OK(res, { auth: true, token: token });
       })
       .catch((err: { msg: any; payload: any }) => {
-        return HttpResponse.UNAUTHORIZED(res,{
+        return HttpResponse.UNAUTHORIZED(res, {
           auth: false,
           msg: err.msg,
           error: err.payload,
-        })
+        });
       });
   };
 }

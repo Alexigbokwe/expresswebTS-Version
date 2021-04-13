@@ -5,9 +5,9 @@ import Authenticator from "Elucidate/Auth/Authenticator";
 
 
 class LoginController {
-  Auth: Authenticator;
+  protected Auth: Authenticator;
 
-  constructor(Authenticator: Authenticator) {
+  constructor(Authenticator:Authenticator) {
     this.Auth = Authenticator;
   }
   /*
