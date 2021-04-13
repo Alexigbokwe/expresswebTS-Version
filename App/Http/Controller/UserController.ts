@@ -1,15 +1,10 @@
 import { Request, Response, NextFunction } from "Elucidate/HttpContext";
 import HttpResponse from "Elucidate/HttpContext/ResponseType";
-import Authenticator from "Elucidate/Auth/Authenticator";
 
-import UserModel from "App/Model/UserModel";
+import UserModel from "App/Model/User_model";
 
 class UserController {
-  Auth: Authenticator;
-  constructor(Authenticator: Authenticator) {
-      this.Auth = Authenticator;
-      
-  }
+
   public async index(req: Request, res: Response, next: NextFunction) {
     try {
       await UserModel.query().then(users => {
