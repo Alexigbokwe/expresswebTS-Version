@@ -6,17 +6,15 @@ const Authenticator_1 = tslib_1.__importDefault(require("Elucidate/Auth/Authenti
 class AppServiceProvicer extends ServiceProvider_1.default {
     /**
      * Bootstrap any application services.
-     *
      * @return void
      */
     boot() {
         //Authenticator
         //let database = this.app.use("DatabaseServiceProvider")
-        //console.log(database.model.knex);
+        //console.log(this.app.entries);
     }
     /**
      * Register any application services.
-     *
      * @return void
      */
     register() {

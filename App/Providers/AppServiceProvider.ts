@@ -7,9 +7,7 @@ class AppServiceProvicer extends ServiceProvider {
    * @return void
    */
   public boot() {
-    //Authenticator
-    //let database = this.app.use("DatabaseServiceProvider")
-    //console.log(this.app.entries);
+    //
   }
 
   /**
