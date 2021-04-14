@@ -1,6 +1,7 @@
+import Authenticator from "Elucidate/Auth/Authenticator";
 declare class RegisterController {
-    Auth: any;
-    constructor(Auth: any);
+    protected Auth: Authenticator;
+    constructor(Authenticator: Authenticator);
     register: (req: any, res: any) => Promise<any>;
     /**
      * Get a validator for an incoming registration request.

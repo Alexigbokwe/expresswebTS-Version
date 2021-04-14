@@ -1,6 +1,6 @@
 import Authenticator from "Elucidate/Auth/Authenticator";
 declare class LoginController {
-    Auth: Authenticator;
+    protected Auth: Authenticator;
     constructor(Authenticator: Authenticator);
     login: (req: any, res: any) => Promise<any>;
     /**

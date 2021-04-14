@@ -5,7 +5,7 @@ const Hash_1 = tslib_1.__importDefault(require("Elucidate/Hashing/Hash"));
 const FormRequest_1 = tslib_1.__importDefault(require("Elucidate/Validator/FormRequest"));
 const ResponseType_1 = tslib_1.__importDefault(require("Elucidate/HttpContext/ResponseType"));
 class RegisterController {
-    constructor(Auth) {
+    constructor(Authenticator) {
         /*
           |--------------------------------------------------------------------------
           | Register Controller
@@ -45,7 +45,7 @@ class RegisterController {
                 });
             });
         });
-        this.Auth = Auth;
+        this.Auth = Authenticator;
     }
     /**
      * Get a validator for an incoming registration request.
@@ -55,8 +55,7 @@ class RegisterController {
     validator(record) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             return yield FormRequest_1.default.make(record, {
-                first_name: "required|string|max:255",
-                last_name: "required|string|max:255",
+                username: "required|string|max:255",
                 email: "required|string|email|max:255",
                 password: "required|string|min:8",
             });
