@@ -20,4 +20,4 @@ class Kernel {
   }
 }
 
-export default Kernel;
+module.exports = Kernel;

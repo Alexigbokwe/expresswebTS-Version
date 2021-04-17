@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class Kernel {
     /**
      * The Maker commands provided by your application.
@@ -18,4 +17,4 @@ class Kernel {
         //
     }
 }
-exports.default = Kernel;
+module.exports = Kernel;

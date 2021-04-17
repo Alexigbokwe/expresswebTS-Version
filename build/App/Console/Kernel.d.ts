@@ -10,4 +10,3 @@ declare class Kernel {
      */
     static schedule(): void;
 }
-export default Kernel;

@@ -5,20 +5,18 @@ const ServiceProvider_1 = tslib_1.__importDefault(require("Elucidate/Support/Ser
 const Authenticator_1 = tslib_1.__importDefault(require("Elucidate/Auth/Authenticator"));
 class AppServiceProvicer extends ServiceProvider_1.default {
     /**
-     * Bootstrap any application services.
-     * @return void
-     */
-    boot() {
-        //Authenticator
-        //let database = this.app.use("DatabaseServiceProvider")
-        //console.log(this.app.entries);
-    }
-    /**
      * Register any application services.
      * @return void
      */
     register() {
         this.app.singleton("Authenticator", Authenticator_1.default, "class");
+    }
+    /**
+     * Bootstrap any application services.
+     * @return void
+     */
+    boot() {
+        //
     }
 }
 exports.default = AppServiceProvicer;
