@@ -32,4 +32,4 @@ const commands = [
     "ExpressWebJs/commands/make-provider",
 ];
   
-export default commands;
+module.exports = { commands };

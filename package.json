@@ -5,14 +5,17 @@
   "main": "build/app.js",
   "nodemonConfig": {
     "watch": [
-      "."
+      "./"
+    ],
+    "ignore": [
+      "./build/"
     ],
     "exec": "node -r tsconfig-paths/register -r ts-node/register app.ts",
-    "ext": "ts, js, mjs"
+    "ext": "ts, json"
   },
   "scripts": {
     "test": "jest",
-    "dev": "nodemon",
+    "dev": "npm run compile && nodemon",
     "start": "tsc && node -r tsconfig-paths/register -r ts-node/register build/app.js",
     "build": "rimraf ./build && npm run compile",
     "compile": "tsc -p .",
@@ -37,7 +40,8 @@
   },
   "dependencies": {
     "expresswebcorets": "^1.0.20",
-    "expresswebjs-preset-ts": "^1.0.3",
+    "expresswebjs-preset-ts": "^1.0.4",
+    "maker-console-ts": "^1.0.6",
     "mongoose": "^5.11.9",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",

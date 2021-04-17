@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /*
 |--------------------------------------------------------------------------
 | Maker Commands
@@ -33,4 +32,4 @@ const commands = [
     "ExpressWebJs/commands/make-job",
     "ExpressWebJs/commands/make-provider",
 ];
-exports.default = commands;
+module.exports = { commands };

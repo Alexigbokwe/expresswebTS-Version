@@ -3,13 +3,12 @@
  * Assign your table name to the tableName variable.
  * Remember, it's always in plural
  */
-let tableName = "users";
+let tableName = "posts";
 exports.up = function (migration) {
   return migration.schema.createTable(tableName, (table) => {
     table.increments("id");
-    table.string("username").notNullable();
-    table.string("email").unique().notNullable();
-    table.string("password").notNullable();
+    table.string("title").notNullable();
+    table.string("content").notNullable();
     table.timestamps(true, true);
   });
 };

@@ -1,6 +1,8 @@
-import commands from "Command";
-import kernel from "App/Console/Kernel";
-import maker from "maker-consoleTs";
+const path = require("path");
+const { commands } = require(path.join(__dirname,"./Command/index"));
+const kernel = require(path.join(__dirname,"./App/Console/kernel.ts"));
+const makerts = require("maker-console-ts");
+
 
 /*
 |--------------------------------------------------------------------------
@@ -11,5 +13,5 @@ import maker from "maker-consoleTs";
 | executed in this console and the response sent back to a terminal
 |
 */
-
-maker.run(commands, kernel);
+//console.log(makerts.default)
+makerts.default.run(commands, kernel);
