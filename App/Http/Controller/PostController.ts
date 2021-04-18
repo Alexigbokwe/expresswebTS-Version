@@ -16,7 +16,6 @@ class PostController {
 
   /**
    * Show the form for creating a new resource.
-   *
    * @return Response
    */
   create = async (req: Request, res: Response, next: NextFunction) => {
