@@ -17,5 +17,7 @@ Route.get("/", (req: Request, res: Response) => {
 
 Route.get("/users", "UserController@index");
 
+Route.post("/post","PostController@index");
+
 //--------------------------------------------------------------------------
 export default Route.exec;

@@ -14,4 +14,4 @@ class CheckForMaintenanceMode {
   }
 }
 
-module.exports = CheckForMaintenanceMode;
+export default CheckForMaintenanceMode;

@@ -13,8 +13,7 @@ export default {
   */
   applicationLevelMiddleware: [
     "App/Http/Middleware/CheckForMaintenanceMode",
-    //"App/Http/Middleware/ConvertEmptyStringsToNull",
-    // "App/Http/Middleware/Cors",
+    "App/Http/Middleware/ConvertEmptyStringsToNull",
   ],
 
   /*

@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
+const ResponseType_1 = tslib_1.__importDefault(require("Elucidate/HttpContext/ResponseType"));
+const Book_request_1 = tslib_1.__importDefault(require("App/Http/Requests/Book_request"));
 class PostController {
     constructor() {
         /**
@@ -8,7 +10,11 @@ class PostController {
          */
         this.index = (req, res, next) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                //
+                let validate = yield Book_request_1.default.validate(req.body);
+                if (!validate.success) {
+                    ResponseType_1.default.BAD_REQUEST(res, validate);
+                }
+                return ResponseType_1.default.OK(res, validate);
             }
             catch (error) {
                 return next(error);
