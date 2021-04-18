@@ -1,5 +1,7 @@
 declare const _default: {
     applicationLevelMiddleware: string[];
-    routeMiddleware: {};
+    routeMiddleware: {
+        auth: string;
+    };
 };
 export default _default;

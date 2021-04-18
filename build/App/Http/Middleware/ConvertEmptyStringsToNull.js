@@ -5,7 +5,7 @@ class ConvertEmptyStringsToNull {
     handle(req, _res, next) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             if (Object.keys(req.body).length) {
-                req.body = Object.assign(Object.keys(req.body).map((key) => ({
+                req.body = Object.assign({}, ...Object.keys(req.body).map((key) => ({
                     [key]: req.body[key] !== "" ? req.body[key] : null,
                 })));
             }
@@ -13,4 +13,4 @@ class ConvertEmptyStringsToNull {
         });
     }
 }
-module.exports = ConvertEmptyStringsToNull;
+exports.default = ConvertEmptyStringsToNull;

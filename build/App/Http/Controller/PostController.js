@@ -12,7 +12,7 @@ class PostController {
             try {
                 let validate = yield Book_request_1.default.validate(req.body);
                 if (!validate.success) {
-                    ResponseType_1.default.BAD_REQUEST(res, validate);
+                    return ResponseType_1.default.BAD_REQUEST(res, validate);
                 }
                 return ResponseType_1.default.OK(res, validate);
             }
