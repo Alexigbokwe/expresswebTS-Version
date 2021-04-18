@@ -10,7 +10,7 @@ class Book {
      */
     constructor(eventName, params) {
         Emitter_1.default.bind(eventName, () => {
-            //Do something
+            console.log(params);
         });
     }
 }

@@ -1,6 +1,5 @@
 import Route from "Elucidate/Route/manager";
 import { Request, Response, NextFunction } from "Elucidate/HttpContext";
-
 /*
     |--------------------------------------------------------------------------
     | Api route   
@@ -16,6 +15,8 @@ Route.get("/", (req: Request, res: Response) => {
 });
 
 Route.get("/users", "UserController@index");
+
+Route.post("/post","PostController@index",["auth"]);
 
 //--------------------------------------------------------------------------
 export default Route.exec;
