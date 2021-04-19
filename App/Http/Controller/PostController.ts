@@ -1,7 +1,6 @@
 "use strict";
 import { Request, Response, NextFunction } from "Elucidate/HttpContext";
 import HttpResponse from "Elucidate/HttpContext/ResponseType";
-import BookValidator from "App/Http/Requests/Book_request";
 
 class PostController {
   /**
@@ -9,7 +8,11 @@ class PostController {
    */
   index = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      let validate = await BookValidator.validate(req.body);
+      let validate = await req.validation.make(req.body, {
+        name: "required",
+        category: "required"
+      });
+      
       if (!validate.success) {
         return HttpResponse.BAD_REQUEST(res, validate);
       }
