@@ -11,5 +11,5 @@ const WS_1 = tslib_1.__importDefault(require("Elucidate/Socket/WS"));
 |
 */
 exports.default = () => {
-    WS_1.default.channel("chat", "chatController");
+    WS_1.default.channel("notification", "chatController");
 };

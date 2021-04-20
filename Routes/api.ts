@@ -14,9 +14,5 @@ Route.get("/", (req: Request, res: Response) => {
   res.status(200).send("Welcome to ExpressWebJs Typescript Version");
 });
 
-Route.get("/users", "UserController@index");
-
-Route.post("/post","PostController@index",["auth"]);
-
 //--------------------------------------------------------------------------
 export default Route.exec;

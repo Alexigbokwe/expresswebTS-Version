@@ -16,7 +16,7 @@ class AppServiceProvicer extends ServiceProvider_1.default {
      * @return void
      */
     boot() {
-        //console.log(this.app.entries)
+        //
     }
 }
 exports.default = AppServiceProvicer;
