@@ -8,15 +8,7 @@ class PostController {
    */
   index = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      let validate = await req.validation.make(req.body, {
-        name: "required",
-        category: "required"
-      });
-      
-      if (!validate.success) {
-        return HttpResponse.BAD_REQUEST(res, validate);
-      }
-      return HttpResponse.OK(res, validate);
+      //
     } catch (error) {
       return next(error);
     }

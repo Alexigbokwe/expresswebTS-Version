@@ -15,7 +15,7 @@ class AppServiceProvicer extends ServiceProvider {
    * @return void
    */
   public boot() {
-    //console.log(this.app.entries)
+    //
   }
 }
 

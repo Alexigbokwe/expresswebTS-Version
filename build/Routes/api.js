@@ -14,7 +14,5 @@ const manager_1 = tslib_1.__importDefault(require("Elucidate/Route/manager"));
 manager_1.default.get("/", (req, res) => {
     res.status(200).send("Welcome to ExpressWebJs Typescript Version");
 });
-manager_1.default.get("/users", "UserController@index");
-manager_1.default.post("/post", "PostController@index", ["auth"]);
 //--------------------------------------------------------------------------
 exports.default = manager_1.default.exec;
