@@ -6,7 +6,7 @@ class AppServiceProvicer extends ServiceProvider {
    * Register any application services.
    * @return void
    */
-   public register() {
+  public register() {
     this.app.singleton("Authenticator", Authenticator, "class");
    }
   

@@ -10,6 +10,5 @@ import Ws from "Elucidate/Socket/WS";
 */
 
 export default () => {
-  
-  Ws.channel("notification", "chatController");
+  //Ws.channel("notification", "chatController");
 };
