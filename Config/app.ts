@@ -80,6 +80,5 @@ export default {
      */
     "App/Providers/AppServiceProvider::class",
     "App/Providers/RouteServiceProvider::class",
-    "App/Providers/TestProvider::class"
   ],
 };
