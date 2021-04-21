@@ -15,12 +15,9 @@
   },
   "scripts": {
     "test": "jest",
-    "dev": "npm run compile && nodemon",
-    "start": "tsc && node -r tsconfig-paths/register -r ts-node/register build/app.js",
-    "build": "rimraf ./build && npm run compile",
-    "compile": "tsc -p .",
-    "post:compile": "ef-tspm",
-    "api-knex": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' knex --knexfile=./SchemaSetup.ts"
+    "dev": "node maker run-dev",
+    "start": "node maker run-start",
+    "build": "node maker run-build"
   },
   "keywords": [],
   "author": "",
@@ -39,9 +36,9 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "expresswebcorets": "^1.0.33",
+    "expresswebcorets": "^1.0.37",
     "expresswebjs-preset-ts": "^1.0.4",
-    "maker-console-ts": "^1.0.14",
+    "maker-console-ts": "^1.0.17",
     "mongoose": "^5.11.9",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
