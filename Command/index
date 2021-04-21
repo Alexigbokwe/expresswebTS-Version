@@ -30,6 +30,9 @@ const commands = [
     "ExpressWebJs/commands/queue-work",
     "ExpressWebJs/commands/make-job",
     "ExpressWebJs/commands/make-provider",
+    "ExpressWebJs/commands/run-dev",
+    "ExpressWebJs/commands/run-build",
+    "ExpressWebJs/commands/run-start"
 ];
   
 module.exports = { commands };
