@@ -1,7 +1,7 @@
 {
-  "name": "typescript-project",
+  "name": "expresswebjs-ts-version",
   "version": "1.0.0",
-  "description": "",
+  "description": "ExpressWebJs Framework Typescript Version",
   "main": "build/app.js",
   "nodemonConfig": {
     "watch": [
@@ -19,7 +19,7 @@
     "start": "node maker run-start",
     "build": "node maker run-build"
   },
-  "keywords": [],
+  "keywords": ["framework", "expresswebjs"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
