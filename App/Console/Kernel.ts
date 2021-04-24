@@ -8,7 +8,7 @@ class Kernel {
    */
   static commands() {
     return [
-      //
+      "App/Console/Commands/Testing_command.ts"
     ];
   }
 
@@ -16,9 +16,9 @@ class Kernel {
    * Define the application's schedule command.
    * @return void
    */
-  static schedule() {
-    
+  static schedule():any {
+    return scheduler.command("Testing").everySecond().run();
   }
 }
 
-module.exports = Kernel;
+export default Kernel
