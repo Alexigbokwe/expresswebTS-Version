@@ -19,7 +19,10 @@
     "start": "node maker run-start",
     "build": "node maker run-build"
   },
-  "keywords": ["framework", "expresswebjs"],
+  "keywords": [
+    "framework",
+    "expresswebjs"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -33,12 +36,14 @@
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0",
     "tslint": "^6.1.3",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.3",
+    "typescript-transform-paths": "^2.2.3"
   },
   "dependencies": {
-    "expresswebcorets": "^1.0.37",
+    "amqp-ts": "^1.8.0",
+    "expresswebcorets": "^1.0.39",
     "expresswebjs-preset-ts": "^1.0.4",
-    "maker-console-ts": "^1.0.17",
+    "maker-console-ts": "^1.0.21",
     "mongoose": "^5.11.9",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
