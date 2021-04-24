@@ -1,4 +1,5 @@
 "use strict";
+import scheduler from "expressweb-scheduler-ts";
 
 class Kernel {
   /**
@@ -16,7 +17,7 @@ class Kernel {
    * @return void
    */
   static schedule() {
-    //
+    
   }
 }
 
