@@ -8,7 +8,7 @@ class Testing extends Command {
   constructor() {
     super();
     //The name or signature of the console command.
-    this.signature = "";
+    this.signature = "Testing";
 
     /**
      * The name and mode of the console command argument.
@@ -21,7 +21,7 @@ class Testing extends Command {
      * The console command description.
      * @var string
      */
-    this.description = "";
+    this.description = "Testing command";
 
     super.checkCommandName(this.signature);
   }
@@ -32,7 +32,7 @@ class Testing extends Command {
    * @return mixed
    */
   fire() {
-    //
+    console.log("Alex");
   }
 }
 

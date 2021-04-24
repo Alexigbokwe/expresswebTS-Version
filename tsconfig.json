@@ -10,6 +10,6 @@
       "Database/*":["./Database/*"],
       "Routes/*":["./Routes/*"],
       "Elucidate/*":["./node_modules/expresswebcorets/lib/*"],
-    }
+    },
   }
 }

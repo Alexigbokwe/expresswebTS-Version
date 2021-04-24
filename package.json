@@ -15,9 +15,9 @@
   },
   "scripts": {
     "test": "jest",
-    "dev": "node maker run-dev",
-    "start": "node maker run-start",
-    "build": "node maker run-build"
+    "dev": "ts-node maker run-dev",
+    "start": "ts-node maker run-start",
+    "build": "ts-node maker run-build"
   },
   "keywords": [
     "framework",
@@ -44,7 +44,7 @@
     "expressweb-scheduler-ts": "^1.0.2",
     "expresswebcorets": "^1.0.39",
     "expresswebjs-preset-ts": "^1.0.4",
-    "maker-console-ts": "^1.0.21",
+    "maker-console-ts": "^1.0.32",
     "mongoose": "^5.11.9",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
