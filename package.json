@@ -31,7 +31,7 @@
   "dependencies": {
     "amqp-ts": "^1.8.0",
     "expressweb-scheduler-ts": "^1.0.2",
-    "expresswebcorets": "^1.0.42",
+    "expresswebcorets": "^1.0.43",
     "expresswebjs-preset-ts": "^1.0.4",
     "maker-console-ts": "^1.0.33",
     "mongoose": "^5.11.9",
