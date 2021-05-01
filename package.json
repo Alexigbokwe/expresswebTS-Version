@@ -42,9 +42,9 @@
   "dependencies": {
     "amqp-ts": "^1.8.0",
     "expressweb-scheduler-ts": "^1.0.2",
-    "expresswebcorets": "^1.0.40",
+    "expresswebcorets": "^1.0.41",
     "expresswebjs-preset-ts": "^1.0.4",
-    "maker-console-ts": "^1.0.32",
+    "maker-console-ts": "^1.0.33",
     "mongoose": "^5.11.9",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",

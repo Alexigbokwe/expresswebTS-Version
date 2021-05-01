@@ -3,8 +3,11 @@
  * Assign your table name to the tableName variable.
  * Remember, it's always in plural
  */
+import { Migration } from "Elucidate/Database/Model";
+
 let tableName = "users";
-exports.up = function (migration) {
+
+exports.up = function (migration: Migration) {
   return migration.schema.createTable(tableName, (table) => {
     table.increments("id");
     table.string("username").notNullable();
@@ -14,6 +17,6 @@ exports.up = function (migration) {
   });
 };
 
-exports.down = function (migration) {
+exports.down = function (migration: Migration) {
   return migration.schema.dropTable(tableName);
 };
