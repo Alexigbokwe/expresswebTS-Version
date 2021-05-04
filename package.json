@@ -17,6 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.22",
+    "@types/mongoose-paginate": "^5.0.8",
     "@types/node": "^14.14.17",
     "jest": "^26.6.3",
     "nodemon": "^2.0.6",
@@ -31,7 +32,7 @@
   "dependencies": {
     "amqp-ts": "^1.8.0",
     "expressweb-scheduler-ts": "^1.0.2",
-    "expresswebcorets": "^1.0.43",
+    "expresswebcorets": "^1.0.47",
     "expresswebjs-preset-ts": "^1.0.4",
     "maker-console-ts": "^1.0.33",
     "mongoose": "^5.11.9",
