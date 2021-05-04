@@ -15,7 +15,10 @@ class UserService implements IUserService {
   }
   async getAllUsers(): Promise<Array<object>> {
     return await new NOSQLUserRepository()
-      .findMany("_id", ["609036550a9dee10d6f2586e", "609035acaca32c0fc36c5580"])
+      .getAll(
+        { columnName: "_id", order: "desc" },
+        { pageNumber: 1, dataSize: 1 },
+      )
       .then((users) => {
         return users;
       })

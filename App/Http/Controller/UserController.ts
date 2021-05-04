@@ -1,7 +1,6 @@
 import IUserService from "App/Service/User/IUserService";
 import { Request, Response, NextFunction } from "Elucidate/HttpContext";
 import HttpResponse from "Elucidate/HttpContext/ResponseType";
-import Logging from "Utils/Logging";
 
 class UserController {
   protected userService: IUserService;
@@ -14,7 +13,6 @@ class UserController {
       return await this.userService
         .getAllUsers()
         .then((users) => {
-          Logging.info("UserController", "Data successfully fetched", users);
           return HttpResponse.OK(res, users);
         })
         .catch((error) => {
