@@ -28,14 +28,19 @@ class UserService implements IUserService {
   }
 
   async getUser(id: number): Promise<object> {
-    return await new NOSQLUserRepository()
-      .findBy("_id", id)
-      .then((user) => {
-        return user;
-      })
-      .catch((error) => {
-        return error;
-      });
+    return await new Promise(async (resolve, reject) => {
+      return await new NOSQLUserRepository()
+        .findBy("_id", id)
+        .then((user) => {
+          if (Object.keys(user).length === 0) {
+            reject(user);
+          }
+          resolve(user);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
   }
 
   async saveUser(): Promise<object> {

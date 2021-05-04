@@ -1,6 +1,7 @@
 import IUserService from "App/Service/User/IUserService";
 import { Request, Response, NextFunction } from "Elucidate/HttpContext";
 import HttpResponse from "Elucidate/HttpContext/ResponseType";
+import Log from "Elucidate/Log";
 
 class UserController {
   protected userService: IUserService;
@@ -13,12 +14,14 @@ class UserController {
       return await this.userService
         .getAllUsers()
         .then((users) => {
+          Log.error("App/Http/Controller/UserController", "testing log");
           return HttpResponse.OK(res, users);
         })
         .catch((error) => {
           return HttpResponse.EXPECTATION_FAILED(res, error);
         });
     } catch (error) {
+      Log.error("App/Http/Controller/UserController", "testing log", error);
       return next(error);
     }
   };
@@ -34,6 +37,7 @@ class UserController {
           return HttpResponse.NOTFOUND(res, error);
         });
     } catch (error) {
+      Log.error("App/Http/Controller/UserController", "testing log", error);
       return next(error);
     }
   };
@@ -54,6 +58,7 @@ class UserController {
           return HttpResponse.NOTFOUND(res, error);
         });
     } catch (error) {
+      Log.error("App/Http/Controller/UserController", "testing log", error);
       return next(error);
     }
   };
@@ -70,6 +75,7 @@ class UserController {
           return HttpResponse.NOTFOUND(res, error);
         });
     } catch (error) {
+      Log.error("App/Http/Controller/UserController", "testing log", error);
       return next(error);
     }
   };
@@ -90,6 +96,7 @@ class UserController {
           return HttpResponse.NOTFOUND(res, error);
         });
     } catch (error) {
+      Log.error("App/Http/Controller/UserController", "testing log", error);
       return next(error);
     }
   };
