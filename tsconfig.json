@@ -9,6 +9,7 @@
       "Config/*":["./Config/*"],
       "Database/*":["./Database/*"],
       "Routes/*":["./Routes/*"],
+      "Utils/*":["./Utils/*"],
       "Elucidate/*":["./node_modules/expresswebcorets/lib/*"],
     },
   }

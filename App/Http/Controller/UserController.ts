@@ -1,6 +1,7 @@
 import IUserService from "App/Service/User/IUserService";
 import { Request, Response, NextFunction } from "Elucidate/HttpContext";
 import HttpResponse from "Elucidate/HttpContext/ResponseType";
+import Logging from "Utils/Logging";
 
 class UserController {
   protected userService: IUserService;
@@ -13,6 +14,7 @@ class UserController {
       return await this.userService
         .getAllUsers()
         .then((users) => {
+          Logging.info("UserController", "Data successfully fetched", users);
           return HttpResponse.OK(res, users);
         })
         .catch((error) => {
@@ -27,6 +29,26 @@ class UserController {
     try {
       return await this.userService
         .getUser(req.params.id)
+        .then((users) => {
+          return HttpResponse.OK(res, users);
+        })
+        .catch((error) => {
+          return HttpResponse.NOTFOUND(res, error);
+        });
+    } catch (error) {
+      return next(error);
+    }
+  };
+
+  public create = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      return await this.userService
+        .nosqlCreatUser({
+          username: "Alex2 Igbokwe",
+          email: "alex2@yahoo.com",
+          password:
+            "$2a$08$graB36unXi9u02boYrN.gOF7C5TTAUOofVoclJ8xnea8sbdsFmm6a",
+        })
         .then((users) => {
           return HttpResponse.OK(res, users);
         })

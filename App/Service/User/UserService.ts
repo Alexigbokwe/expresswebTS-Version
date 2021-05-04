@@ -1,28 +1,21 @@
 import UserRepository from "App/Repository/UserRepository";
+import NOSQLUserRepository from "App/Repository/NoSQLUserRepo";
 import IUserService from "./IUserService";
 
 class UserService implements IUserService {
-  async saveUser(): Promise<object> {
-    return await new UserRepository()
-      .create({
-        username: "Obinna",
-        email: "obinna@yahoo.com",
-        password: "alex12345",
-      })
-      .then((user) => {
-        return user;
+  async nosqlCreatUser(item: object) {
+    return await new NOSQLUserRepository()
+      .create(item)
+      .then((users) => {
+        return users;
       })
       .catch((error) => {
         return error;
       });
   }
-
   async getAllUsers(): Promise<Array<object>> {
-    return await new UserRepository()
-      .getAll(
-        { columnName: "id", order: "desc" },
-        { pageNumber: 1, dataSize: 1 },
-      )
+    return await new NOSQLUserRepository()
+      .findMany("_id", ["609036550a9dee10d6f2586e", "609035acaca32c0fc36c5580"])
       .then((users) => {
         return users;
       })
@@ -32,8 +25,23 @@ class UserService implements IUserService {
   }
 
   async getUser(id: number): Promise<object> {
+    return await new NOSQLUserRepository()
+      .findBy("_id", id)
+      .then((user) => {
+        return user;
+      })
+      .catch((error) => {
+        return error;
+      });
+  }
+
+  async saveUser(): Promise<object> {
     return await new UserRepository()
-      .findBy("id", id)
+      .create({
+        username: "Obinna",
+        email: "obinna@yahoo.com",
+        password: "alex12345",
+      })
       .then((user) => {
         return user;
       })

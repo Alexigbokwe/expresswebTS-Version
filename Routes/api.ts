@@ -20,6 +20,8 @@ Route.get("/users/:id", "UserController@show");
 
 Route.patch("/users", "UserController@update");
 
+Route.post("/users", "UserController@create");
+
 Route.patch("/users/many", "UserController@updateManyUsers");
 
 //--------------------------------------------------------------------------
