@@ -1,6 +1,5 @@
 import Route from "Elucidate/Route/manager";
 import { Request, Response, NextFunction } from "Elucidate/HttpContext";
-import Log from "Elucidate/Log";
 /*
     |--------------------------------------------------------------------------
     | Api route   
@@ -12,14 +11,7 @@ import Log from "Elucidate/Log";
 */
 
 Route.get("/", (req: Request, res: Response) => {
-  try {
-    res.status(200).sended("Welcome to ExpressWebJs Typescript Version");
-  } catch (error) {
-    Log.error("Routes", "Route Loggin", {
-      name: "Alex",
-      phone: "0909090707070",
-    });
-  }
+  res.status(200).sended("Welcome to ExpressWebJs Typescript Version");
 });
 
 //--------------------------------------------------------------------------
