@@ -14,15 +14,5 @@ Route.get("/", (req: Request, res: Response) => {
   res.status(200).send("Welcome to ExpressWebJs Typescript Version");
 });
 
-Route.get("/users", "UserController@index");
-
-Route.get("/users/:id", "UserController@show");
-
-Route.patch("/users", "UserController@update");
-
-Route.post("/users", "UserController@create");
-
-Route.patch("/users/many", "UserController@updateManyUsers");
-
 //--------------------------------------------------------------------------
 export default Route.exec;
