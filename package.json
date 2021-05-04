@@ -1,6 +1,6 @@
 {
   "name": "expresswebjs-ts-version",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "ExpressWebJs Framework Typescript Version",
   "main": "build/app.js",
   "scripts": {
