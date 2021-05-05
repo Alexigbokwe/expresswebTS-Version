@@ -11,7 +11,7 @@ import { Request, Response, NextFunction } from "Elucidate/HttpContext";
 */
 
 Route.get("/", (req: Request, res: Response) => {
-  res.status(200).sended("Welcome to ExpressWebJs Typescript Version");
+  res.status(200).send("Welcome to ExpressWebJs Typescript Version");
 });
 
 //--------------------------------------------------------------------------
