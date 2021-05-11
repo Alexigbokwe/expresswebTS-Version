@@ -1,25 +1,30 @@
 "use strict";
-import WsBaseController from "Elucidate/Socket/Base";
 
-class ChatController extends WsBaseController {
+class ChatController {
   protected socket: any;
   constructor(socket: any) {
-    super(socket);
     this.socket = socket;
+    this.setMethodListeners();
   }
 
-  onMessage = (data: any)=> {
+  onMessage = (data: any) => {
     // same as: socket.on('message')
     this.socket.emit("message", data);
     console.log(data);
-  }
+  };
 
-  onClose =() =>{
+  onClose = () => {
     // same as: socket.on('close')
-  }
+  };
 
-  onError =() =>{
+  onError = () => {
     // same as: socket.on('error')
+  };
+
+  private setMethodListeners() {
+    this.socket.on("message", this.onMessage);
+    this.socket.on("close", this.onClose);
+    this.socket.on("error", this.onError);
   }
 }
 

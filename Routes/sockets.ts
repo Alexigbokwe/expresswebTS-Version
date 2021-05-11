@@ -9,6 +9,8 @@ import Ws from "Elucidate/Socket/WS";
 |
 */
 
-export default () => {
+export default (socket: any) => {
+  Ws.connect(socket);
+  // Web socket channel controllers
   Ws.channel("notification", "chatController");
 };
