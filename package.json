@@ -32,7 +32,7 @@
   "dependencies": {
     "amqp-ts": "^1.8.0",
     "expressweb-scheduler-ts": "^1.0.2",
-    "expresswebcorets": "^1.0.59",
+    "expresswebcorets": "^1.0.62",
     "expresswebjs-preset-ts": "^1.0.4",
     "log4js": "^6.3.0",
     "maker-console-ts": "^1.0.36",
