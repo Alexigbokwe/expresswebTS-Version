@@ -16,6 +16,7 @@
   "author": "Alex Igbokwe",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^4.17.11",
     "@types/jest": "^26.0.22",
     "@types/mongoose-paginate": "^5.0.8",
     "@types/node": "^14.14.17",
@@ -32,7 +33,7 @@
   "dependencies": {
     "amqp-ts": "^1.8.0",
     "expressweb-scheduler-ts": "^1.0.2",
-    "expresswebcorets": "^1.0.62",
+    "expresswebcorets": "^1.0.66",
     "expresswebjs-preset-ts": "^1.0.4",
     "log4js": "^6.3.0",
     "maker-console-ts": "^1.0.36",

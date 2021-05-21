@@ -12,5 +12,6 @@
       "Utils/*":["./Utils/*"],
       "Elucidate/*":["./node_modules/expresswebcorets/lib/*"],
     },
+    "allowSyntheticDefaultImports": true
   }
 }
