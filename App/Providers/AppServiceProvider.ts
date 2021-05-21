@@ -8,13 +8,13 @@ class AppServiceProvicer extends ServiceProvider {
    */
   public register() {
     this.app.singleton("Authenticator", Authenticator, "class");
-   }
-  
+  }
+
   /**
    * Bootstrap any application services.
    * @return void
    */
-  public boot() {
+  public async boot() {
     //
   }
 }

@@ -1,4 +1,5 @@
 "use strict";
+import scheduler from "expressweb-scheduler-ts";
 
 class Kernel {
   /**
@@ -6,18 +7,16 @@ class Kernel {
    * @var array
    */
   static commands() {
-    return [
-      //
-    ];
+    return [];
   }
 
   /**
    * Define the application's schedule command.
    * @return void
    */
-  static schedule() {
+  static schedule(): any {
     //
   }
 }
 
-module.exports = Kernel;
+export default Kernel;

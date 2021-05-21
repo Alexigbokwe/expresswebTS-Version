@@ -35,4 +35,4 @@ const commands = [
     "ExpressWebJs/commands/run-start"
 ];
   
-module.exports = { commands };
+export default commands

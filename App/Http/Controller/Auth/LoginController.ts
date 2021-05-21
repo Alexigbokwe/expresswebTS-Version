@@ -3,11 +3,10 @@ import HttpResponse from "Elucidate/HttpContext/ResponseType";
 import FormRequest from "Elucidate/Validator/FormRequest";
 import Authenticator from "Elucidate/Auth/Authenticator";
 
-
 class LoginController {
   protected Auth: Authenticator;
 
-  constructor(Authenticator:Authenticator) {
+  constructor(Authenticator: Authenticator) {
     this.Auth = Authenticator;
   }
   /*
@@ -41,11 +40,11 @@ class LoginController {
         return HttpResponse.OK(res, { auth: true, token: token });
       })
       .catch((err: { msg: any; payload: any }) => {
-        return HttpResponse.UNAUTHORIZED(res,{
+        return HttpResponse.UNAUTHORIZED(res, {
           auth: false,
           msg: err.msg,
           error: err.payload,
-        })
+        });
       });
   };
 
