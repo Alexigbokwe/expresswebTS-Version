@@ -1,5 +1,4 @@
 "use strict";
-
 class ChatController {
   protected socket: any;
   constructor(socket: any) {

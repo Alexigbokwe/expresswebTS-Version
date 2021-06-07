@@ -19,7 +19,8 @@ export default {
     |--------------------------------------------------------------------------
     | Bcrypt Options
     |--------------------------------------------------------------------------
-    |
+    | npm install bcrypt
+    |--------------------------------------------------------------------------
     | Here you may specify the configuration options that should be used when
     | passwords are hashed using the Bcrypt algorithm. This will allow you
     | to control the amount of time it takes to hash the given password.
@@ -34,7 +35,8 @@ export default {
     |--------------------------------------------------------------------------
     | Argon Options
     |--------------------------------------------------------------------------
-    |
+    | npm install argon
+    |--------------------------------------------------------------------------
     | Here you may specify the configuration options that should be used when
     | passwords are hashed using the Argon algorithm. These will allow you
     | to control the amount of time it takes to hash the given password.

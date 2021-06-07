@@ -31,9 +31,10 @@
     "typescript-transform-paths": "^2.2.3"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "amqp-ts": "^1.8.0",
     "expressweb-scheduler-ts": "^1.0.2",
-    "expresswebcorets": "^1.0.77",
+    "expresswebcorets": "^1.0.83",
     "expresswebjs-preset-ts": "^1.0.4",
     "log4js": "^6.3.0",
     "maker-console-ts": "^1.0.40",
