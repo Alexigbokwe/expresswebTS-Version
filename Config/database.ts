@@ -19,8 +19,7 @@ export default {
   |
   | Database multitenace connection enables interaction with multiple
   | SQL databases where each database is a tenant in your system.
-  | The tenant array accepts an object of db_client and database_name
-  | which you've aready configured below.
+  | The tenant array accepts an object of database connections (tenants).
   |
   */
   multitenant_tenants: [],
