@@ -8,5 +8,5 @@
 |
 */
 
-import app from "expresswebcorets/lib/app";
+import app from "expresswebcorets/lib/App";
 export default app.start();

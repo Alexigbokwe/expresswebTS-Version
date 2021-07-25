@@ -1,5 +1,5 @@
 {
-  "extends": "./node_modules/expresswebjs-preset-ts/tsconfig",
+  "extends": "./node_modules/expresswebjs-preset-ts/tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./build",  
@@ -12,6 +12,8 @@
       "Utils/*":["./Utils/*"],
       "Elucidate/*":["./node_modules/expresswebcorets/lib/*"],
     },
-    "allowSyntheticDefaultImports": true
+    "declaration": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
   }
 }
