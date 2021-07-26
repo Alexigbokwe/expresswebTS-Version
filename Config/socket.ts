@@ -98,14 +98,7 @@ export default {
   cors: {
     origin: "*",
     methods: ["GET", "POST"],
-    allowedHeaders: [
-      "Origin",
-      "Content-Type",
-      "Content-Length",
-      "Authorization",
-      "Accept",
-      "X-Requested-With",
-    ],
+    allowedHeaders: ["Origin", "Content-Type", "Content-Length", "Authorization", "Accept", "X-Requested-With"],
     credentials: true,
-}
+  },
 };

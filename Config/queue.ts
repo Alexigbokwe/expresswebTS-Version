@@ -1,5 +1,5 @@
-"use strict"
-import env from "expresswebcorets/lib/ENV";
+"use strict";
+import env from "expresswebcorets/lib/Env";
 
 export default {
   /*
@@ -14,7 +14,7 @@ export default {
     | `run npm install amqplib` to get started
     */
 
-  default: env("QUEUE_CONNECTION",null), 
+  default: env("QUEUE_CONNECTION", null),
 
   /*
     |--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ export default {
     rabbitmq: {
       driver: "rabbitmq",
       connection: "default",
-      queue: env("RABBITMQ_QUEUE","default"),
+      queue: env("RABBITMQ_QUEUE", "default"),
       retry_after: 90,
       block_for: null,
       host: env("RABBITMQ_HOST"),

@@ -1,5 +1,5 @@
 "use strict";
-import env from "expresswebcorets/lib/ENV";
+import env from "expresswebcorets/lib/Env";
 export default {
   /*
     |--------------------------------------------------------------------------
