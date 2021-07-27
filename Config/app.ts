@@ -82,4 +82,16 @@ export default {
     "App/Providers/RouteServiceProvider::class",
     //"App/Providers/SocketServiceProvider::class",
   ],
+
+  /*
+    |--------------------------------------------------------------------------
+    | Static Directories
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the static directories that will be copied to build 
+    | folder during build process.
+    |
+    */
+
+  static_directories: [{ source: "Logs", destination: "build/Logs" }],
 };
