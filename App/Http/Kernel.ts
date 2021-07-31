@@ -11,11 +11,7 @@ export default {
   | These middlewares are run during every request to your application.
   |
   */
-  applicationLevelMiddleware: [
-    "App/Http/Middleware/CheckForMaintenanceMode",
-    "App/Http/Middleware/ConvertEmptyStringsToNull",
-    "App/Http/Middleware/RequestBodyValidator",
-  ],
+  applicationLevelMiddleware: ["App/Http/Middleware/CheckForMaintenanceMode", "App/Http/Middleware/ConvertEmptyStringsToNull", "App/Http/Middleware/RequestBodyValidator"],
 
   /*
   |--------------------------------------------------------------------------
