@@ -1,7 +1,8 @@
 import ServiceProvider from "Elucidate/Support/ServiceProvider";
+import IRoute from "Elucidate/Route/IRoute";
 
 class RouteServiceProvider extends ServiceProvider {
-  Route: any;
+  Route!: IRoute;
   /**
    * Define your route prefix binding and control route request limit.
    * Default base route prefix is 'api'
@@ -16,11 +17,7 @@ class RouteServiceProvider extends ServiceProvider {
    * Configure the rate limiters for the application.
    */
   configureRateLimiting() {
-    return this.Route.for("/api/")
-      .perMinute(270)
-      .errorMessage()
-      .httpStatusCode(429)
-      .save();
+    return this.Route.for("/api/").perMinute(1000).errorMessage().httpStatusCode(429).save();
   }
 }
 
