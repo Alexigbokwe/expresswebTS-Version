@@ -29,6 +29,18 @@ export default {
 
   /*
     |--------------------------------------------------------------------------
+    | Application Route Prefix
+    |--------------------------------------------------------------------------
+    |
+    | Define your route prefix binding. Default base route prefix is 'api'
+    | This will run your project with '/api'. Example: http://127.0.0.1:5100/api
+    |
+    */
+
+  routePrefix: env("ROUTE_PREFIX", "api"),
+
+  /*
+    |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
     |
@@ -80,6 +92,7 @@ export default {
      */
     "App/Providers/AppServiceProvider::class",
     "App/Providers/RouteServiceProvider::class",
+    "App/Providers/ShutDownProvider::class",
     //"App/Providers/SocketServiceProvider::class",
   ],
 

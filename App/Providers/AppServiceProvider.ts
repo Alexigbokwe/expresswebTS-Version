@@ -1,5 +1,7 @@
 import ServiceProvider from "Elucidate/Support/ServiceProvider";
 import Authenticator from "Elucidate/Auth/Authenticator";
+import DOCUMENTATION from "Elucidate/Documentation/DocumentationServiceProvider";
+import routeDocumentation from "Resources/RouteDocumentation";
 
 class AppServiceProvicer extends ServiceProvider {
   /**
@@ -16,6 +18,15 @@ class AppServiceProvicer extends ServiceProvider {
    */
   public async boot() {
     //
+  }
+
+  /**
+   * Load any service after application boot stage
+   * @return void
+   */
+  public async booted() {
+    // Documentation endpoint is '/documentationView' for JSON response '/documentationJson'
+    DOCUMENTATION.autoDocumentEndPoints("./Resources", routeDocumentation, "https://dms.com");
   }
 }
 
