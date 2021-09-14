@@ -26,7 +26,7 @@ class AppServiceProvicer extends ServiceProvider {
    */
   public async booted() {
     // Documentation endpoint is '/documentationView' for JSON response '/documentationJson'
-    DOCUMENTATION.autoDocumentEndPoints("./Resources", routeDocumentation, "https://dms.com");
+    DOCUMENTATION.autoDocumentEndPoints("./Resources", routeDocumentation);
   }
 }
 
