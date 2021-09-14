@@ -106,5 +106,8 @@ export default {
     |
     */
 
-  static_directories: [{ source: "Logs", destination: "build/Logs" }],
+  static_directories: [
+    { source: "Logs", destination: "build/Logs" },
+    { source: "Resources", destination: "build/Resources" },
+  ],
 };
