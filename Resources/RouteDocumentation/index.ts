@@ -4,7 +4,7 @@ export default [
     description: "ExpressWebJs Default Route",
     request: {},
     response: {
-      message: "",
+      payload: { message: "object", status: "boolean" },
     },
   },
 ];
