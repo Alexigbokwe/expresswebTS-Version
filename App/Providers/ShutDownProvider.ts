@@ -8,20 +8,20 @@ class ShutDownProvider extends ServiceProvider {
    */
   boot() {
     let application = this.app.use("ApplicationInstance");
-    process.on("SIGINT", () => {
-      console.log("\n[server] Shutting down...");
+    process.on("SIGINT", (error) => {
+      console.log("\n[server] Shutting down...", error);
       application.close();
       process.exit();
     });
 
-    process.on("SIGTERM", () => {
-      console.log("\n[server] Shutting down...");
+    process.on("SIGTERM", (error) => {
+      console.log("\n[server] Shutting down...", error);
       application.close();
       process.exit();
     });
 
-    process.on("uncaughtException", () => {
-      console.log("\n[server] Shutting down...");
+    process.on("uncaughtException", (error) => {
+      console.log("\n[server] Shutting down...", error);
       application.close();
       process.exit();
     });
