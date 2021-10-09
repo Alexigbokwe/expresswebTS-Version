@@ -1,4 +1,6 @@
-<p align="center"><a href="https://expresswebjs.com" target="_blank"><img src="https://expresswebjs.com/static/media/Logo.9bc684b2.png" width="400"></a></p>
+<p align="center"><a href="https://expresswebjs.com" target="_blank"><img src="https://expresswebjs.com/static/media/Logo.9bc684b2.png" width="400"></a>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/TypeScript_Logo_%28Blue%29.svg/1280px-TypeScript_Logo_%28Blue%29.svg.png" width="50">
+</p>
 
 #
 
@@ -10,8 +12,6 @@ ExpressWebJs focuses on providing developer experience and powerful features suc
 **dependency injection,database abstraction layer for both SQL and NOSQL, robust routing, code structure, application configuration, testing and more.**
 
 ExpressWebJs is designed for building professional web applications.
-
-This is the TypeScript version of ExpressWebJs
 
 # Features
 
