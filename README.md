@@ -1,6 +1,6 @@
-<p align="center"><a href="https://expresswebjs.com" target="_blank"><img src="https://expresswebjs.com/logo.png" width="400"></a></p>
+<p align="center"><a href="https://expresswebjs.com" target="_blank"><img src="https://expresswebjs.com/static/media/Logo.9bc684b2.png" width="400"></a></p>
 
-# About ExpressWebJs
+#
 
 ExpressWebJs is a **Node FrameWork** with expressive and organised syntax that runs on all
 major operating systems. It provides the starting point for creating your node project, allowing
@@ -10,6 +10,8 @@ ExpressWebJs focuses on providing developer experience and powerful features suc
 **dependency injection,database abstraction layer for both SQL and NOSQL, robust routing, code structure, application configuration, testing and more.**
 
 ExpressWebJs is designed for building professional web applications.
+
+This is the TypeScript version of ExpressWebJs
 
 # Features
 
@@ -36,6 +38,8 @@ ExpressWebJs is designed for building professional web applications.
 - Multi-tenancy
 
 ## Follow us on twitter @expresswebjs
+
+## Join ExpressWebJs Community on [Discord](https://discord.com/invite/vrPGZCgJuj)
 
 Our Github discussion page is available for questions and discussions
 
