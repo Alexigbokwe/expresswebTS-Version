@@ -35,7 +35,7 @@
     "aws-sdk": "^2.933.0",
     "bcryptjs": "^2.4.3",
     "expressweb-scheduler-ts": "^1.0.2",
-    "expresswebcorets": "^1.1.24",
+    "expresswebcorets": "^1.1.27",
     "expresswebjs-preset-ts": "^1.0.4",
     "log4js": "^6.3.0",
     "maker-console-ts": "^1.0.53",
@@ -44,6 +44,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "recursive-copy": "^2.0.13",
+    "set-value": "^4.1.0",
     "socket.io": "^3.1.0"
   }
 }
