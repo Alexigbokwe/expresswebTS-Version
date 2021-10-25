@@ -35,7 +35,7 @@
     "aws-sdk": "^2.933.0",
     "bcryptjs": "^2.4.3",
     "expressweb-scheduler-ts": "^1.0.2",
-    "expresswebcorets": "^1.1.28",
+    "expresswebcorets": "^1.1.30",
     "expresswebjs-preset-ts": "^1.0.4",
     "log4js": "^6.3.0",
     "maker-console-ts": "^1.0.53",
