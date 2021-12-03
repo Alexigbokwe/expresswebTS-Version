@@ -39,7 +39,7 @@ ExpressWebJs is designed for building professional web applications.
 
 ## Follow us on twitter @expresswebjs
 
-## Join ExpressWebJs Community on [Discord](https://discord.com/invite/vrPGZCgJuj)
+## Join ExpressWebJs Community on [Discord](https://discord.com/invite/vrPGZCgJuj) to chat with other engineers using using ExpressWebJs
 
 Our Github discussion page is available for questions and discussions
 
