@@ -1,6 +1,6 @@
 {
   "name": "expresswebjs-ts-version",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "ExpressWebJs Framework Typescript Version",
   "main": "build/app.js",
   "scripts": {
@@ -35,10 +35,10 @@
     "aws-sdk": "^2.933.0",
     "bcryptjs": "^2.4.3",
     "expressweb-scheduler-ts": "^1.0.2",
-    "expresswebcorets": "^1.1.31",
+    "expresswebcorets": "^1.1.34",
     "expresswebjs-preset-ts": "^1.0.4",
     "log4js": "^6.3.0",
-    "maker-console-ts": "^1.0.53",
+    "maker-console-ts": "^1.0.56",
     "module-alias": "^2.2.2",
     "mongoose": "^5.11.9",
     "mysql": "^2.18.1",
