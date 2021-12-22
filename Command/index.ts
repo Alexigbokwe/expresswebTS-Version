@@ -29,6 +29,7 @@ const commands = [
   "ExpressWebJs/commands/run-schedule",
   "ExpressWebJs/commands/queue-work",
   "ExpressWebJs/commands/make-identity",
+  "ExpressWebJs/commands/make-service",
   "ExpressWebJs/commands/make-job",
   "ExpressWebJs/commands/make-provider",
   "ExpressWebJs/commands/run-dev",
