@@ -33,6 +33,7 @@ const commands = [
   "ExpressWebJs/commands/make-job",
   "ExpressWebJs/commands/make-provider",
   "ExpressWebJs/commands/run-dev",
+  "ExpressWebJs/commands/make-rule",
   "ExpressWebJs/commands/run-build",
   "ExpressWebJs/commands/run-start",
 ];
