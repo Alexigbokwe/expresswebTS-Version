@@ -1,13 +1,9 @@
 import { Request, Response } from "Elucidate/HttpContext";
 import Authenticator from "Elucidate/Auth/Authenticator";
-import { LoginValidation, dataType } from "App/Http/Validation/LoginValidation";
+import { LoginValidation, dataType } from "App/Http/Requests/LoginValidation";
 
 class LoginController {
-  protected Auth: Authenticator;
-
-  constructor(Authenticator: Authenticator) {
-    this.Auth = Authenticator;
-  }
+  constructor(private authenticator: Authenticator) {}
   /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -33,9 +29,10 @@ class LoginController {
    * @return User
    */
   private processLogin = async (data: object, res: Response) => {
-    return await this.Auth.processLogin(data)
+    return await this.authenticator
+      .processLogin(data)
       .then(async (user: object) => {
-        let token = await this.Auth.generateToken(user);
+        let token = await this.authenticator.generateToken(user);
         return res.send({ data: { token }, status: true }, 200);
       })
       .catch((err: { msg: any; payload: any }) => {

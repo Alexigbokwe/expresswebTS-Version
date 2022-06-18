@@ -1,14 +1,10 @@
 import Hash from "Elucidate/Hashing/Hash";
 import { Request, Response } from "Elucidate/HttpContext";
 import Authenticator from "Elucidate/Auth/Authenticator";
-import { dataType, RegisterValidation } from "App/Http/Validation/RegisterValidation";
+import { dataType, RegisterValidation } from "App/Http/Requests/RegisterValidation";
 
 class RegisterController {
-  protected Auth: Authenticator;
-
-  constructor(Authenticator: Authenticator) {
-    this.Auth = Authenticator;
-  }
+  constructor(private authenticator: Authenticator) {}
 
   /*
     |--------------------------------------------------------------------------
@@ -36,9 +32,10 @@ class RegisterController {
    */
   private create = async (data: object, res: Response) => {
     data["password"] = await Hash.make(data["password"]);
-    return await this.Auth.createUser(data)
+    return await this.authenticator
+      .createUser(data)
       .then(async (user: any) => {
-        let token = await this.Auth.generateToken(user);
+        let token = await this.authenticator.generateToken(user);
         return res.send({ status: true, data: { token } }, 200);
       })
       .catch((err: { msg: any; payload: any }) => {
