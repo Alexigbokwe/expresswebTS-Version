@@ -1,6 +1,6 @@
 {
   "name": "expresswebjs-ts-version",
-  "version": "3.3.0",
+  "version": "4.0.0",
   "description": "ExpressWebJs Framework Typescript Version",
   "main": "build/app.js",
   "scripts": {
@@ -31,16 +31,13 @@
     "typescript-transform-paths": "^2.2.3"
   },
   "dependencies": {
-    "amqp-ts": "^1.8.0",
-    "aws-sdk": "^2.933.0",
     "bcryptjs": "^2.4.3",
     "expressweb-scheduler-ts": "^1.0.4",
-    "expresswebcorets": "1.1.35",
+    "expresswebcorets": "2.0.0",
     "expresswebjs-preset-ts": "^1.0.4",
     "log4js": "^6.3.0",
     "maker-console-ts": "^1.0.57",
     "module-alias": "^2.2.2",
-    "mongoose": "^5.11.9",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "recursive-copy": "^2.0.13",
