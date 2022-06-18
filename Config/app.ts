@@ -1,5 +1,5 @@
 "use strict";
-import env from "expresswebcorets/lib/Env";
+import { env, platform } from "expresswebcorets/lib/Env";
 export default {
   /*
     |--------------------------------------------------------------------------
@@ -13,6 +13,19 @@ export default {
     */
 
   name: env("APP_NAME", "ExpressWebJs"),
+
+  /*
+    |--------------------------------------------------------------------------
+    | Application platform
+    |--------------------------------------------------------------------------
+    |
+    | This value is the platform your application will run on. ExpressWebJs currently
+    | supports which is Restana and Express. Restana which is the default platform is blazing fast.
+    | You can check the benchmark https://web-frameworks-benchmark.netlify.app/result?f=feathersjs,0http,koa,nestjs-express,express,sails,fastify,nestjs-fastify,restana
+    |
+    */
+
+  platform: env("PLATFORM", platform.Restana),
 
   /*
     |--------------------------------------------------------------------------

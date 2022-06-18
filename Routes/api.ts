@@ -1,6 +1,6 @@
 import { Route } from "Elucidate/Route/RouteManager";
-
 import { Request, Response } from "Elucidate/HttpContext";
+
 /*
     |--------------------------------------------------------------------------
     | Api route   

@@ -7,6 +7,6 @@
 | in the .env file. You are free to configure them. 
 |
 */
-import { startApplication, ORM, HTTPSERVER } from "expresswebcorets";
+import { startApplication, ORM } from "expresswebcorets";
 
-startApplication(HTTPSERVER.DefaultServer, { orm: ORM.ObjectionWithKnex });
+startApplication({ orm: ORM.ObjectionWithKnex });
