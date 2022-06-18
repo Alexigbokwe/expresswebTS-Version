@@ -1,6 +1,6 @@
 import ServiceProvider from "Elucidate/Support/ServiceProvider";
 import Authenticator from "Elucidate/Auth/Authenticator";
-import DOCUMENTATION from "Elucidate/Documentation/DocumentationServiceProvider";
+import DOCUMENTATION from "Elucidate/Documentation";
 import routeDocumentation from "Resources/RouteDocumentation";
 
 class AppServiceProvicer extends ServiceProvider {

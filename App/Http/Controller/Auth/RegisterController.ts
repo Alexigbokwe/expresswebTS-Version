@@ -1,7 +1,7 @@
 import Hash from "Elucidate/Hashing/Hash";
 import { Request, Response } from "Elucidate/HttpContext";
 import Authenticator from "Elucidate/Auth/Authenticator";
-import { dataType, RegisterValidation } from "App/Http/Requests/RegisterValidation";
+import { dataType, RegisterValidation } from "App/Http/Validation/RegisterValidation";
 
 class RegisterController {
   constructor(private authenticator: Authenticator) {}

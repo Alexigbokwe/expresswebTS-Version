@@ -12,7 +12,7 @@ import { Request, Response } from "Elucidate/HttpContext";
 */
 
 Route.get("/", (req: Request, res: Response) => {
-  res.status(200).send("Welcome to ExpressWebJs Version 4");
+  res.send("Welcome to ExpressWebJs Version 4");
 });
 
 //--------------------------------------------------------------------------

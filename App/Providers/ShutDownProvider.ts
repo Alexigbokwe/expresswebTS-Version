@@ -7,7 +7,7 @@ class ShutDownProvider extends ServiceProvider {
    * @return void
    */
   boot() {
-    let application = this.app.use("ApplicationInstance");
+    let application = this.use("Application");
     process.on("SIGINT", (error) => {
       console.log("\n[server] Shutting down...", error);
       application.close();

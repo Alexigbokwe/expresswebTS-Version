@@ -1,6 +1,6 @@
 import { Request, Response } from "Elucidate/HttpContext";
 import Authenticator from "Elucidate/Auth/Authenticator";
-import { LoginValidation, dataType } from "App/Http/Requests/LoginValidation";
+import { LoginValidation, dataType } from "App/Http/Validation/LoginValidation";
 
 class LoginController {
   constructor(private authenticator: Authenticator) {}
