@@ -1,7 +1,6 @@
 import { Request, Response } from "Elucidate/HttpContext";
-import HttpResponse from "Elucidate/HttpContext/ResponseType";
 import Authenticator from "Elucidate/Auth/Authenticator";
-import { LoginValidation, dataType } from "App/Http/Requests/LoginValidation";
+import { LoginValidation, dataType } from "App/Http/Validation/LoginValidation";
 
 class LoginController {
   protected Auth: Authenticator;
@@ -23,7 +22,7 @@ class LoginController {
     if (validation.success) {
       return await this.processLogin(validation.data, res);
     } else {
-      return HttpResponse.BAD_REQUEST(res, validation);
+      return res.send({ data: validation, status: false }, 401);
     }
   };
 
@@ -37,14 +36,17 @@ class LoginController {
     return await this.Auth.processLogin(data)
       .then(async (user: object) => {
         let token = await this.Auth.generateToken(user);
-        return HttpResponse.OK(res, { auth: true, token: token });
+        return res.send({ data: { token }, status: true }, 200);
       })
       .catch((err: { msg: any; payload: any }) => {
-        return HttpResponse.UNAUTHORIZED(res, {
-          auth: false,
-          msg: err.msg,
-          error: err.payload,
-        });
+        return res.send(
+          {
+            auth: false,
+            msg: err.msg,
+            error: err.payload,
+          },
+          400,
+        );
       });
   };
 }

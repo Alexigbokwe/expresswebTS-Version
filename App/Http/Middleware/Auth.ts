@@ -1,22 +1,23 @@
 "use strict";
 import Authenticator from "Elucidate/Auth/Authenticator";
-import { Request, Response, NextFunction } from "Elucidate/HttpContext";
-import HttpResponse from "Elucidate/HttpContext/ResponseType";
+import { Request, Response } from "Elucidate/HttpContext";
+import { MiddlewareHandler } from "Elucidate/MiddlewareHandler";
 
-class AuthMiddleware {
+class AuthMiddleware extends MiddlewareHandler {
   Auth: Authenticator;
-  constructor(Authenticator:Authenticator) {
-    this.Auth = Authenticator
+  constructor(Authenticator: Authenticator) {
+    super();
+    this.Auth = Authenticator;
   }
-  handle = async(req: Request, res: Response, next: NextFunction) =>{
+
+  override async preHandle(req: Request, res: Response): Promise<boolean> {
     let result = await this.Auth.processAuthMW(req.headers["authorization"]);
     if (result.type == "error") {
-      return HttpResponse.UNAUTHORIZED(res, { auth: false, message: result.msg, payload: result.payload });
+      res.send({ auth: false, message: result.msg, payload: result.payload }, 401);
     }
 
     req.user = result.payload;
-
-    await next();
+    return true;
   }
 }
 

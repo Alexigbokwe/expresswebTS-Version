@@ -1,8 +1,7 @@
 import Hash from "Elucidate/Hashing/Hash";
 import { Request, Response } from "Elucidate/HttpContext";
-import HttpResponse from "Elucidate/HttpContext/ResponseType";
 import Authenticator from "Elucidate/Auth/Authenticator";
-import { dataType, RegisterValidation } from "App/Http/Requests/RegisterValidation";
+import { dataType, RegisterValidation } from "App/Http/Validation/RegisterValidation";
 
 class RegisterController {
   protected Auth: Authenticator;
@@ -25,7 +24,7 @@ class RegisterController {
     if (validation.success) {
       return await this.create(validation.data, res);
     } else {
-      return HttpResponse.BAD_REQUEST(res, validation);
+      return res.send({ data: validation, status: false }, 400);
     }
   };
 
@@ -40,14 +39,17 @@ class RegisterController {
     return await this.Auth.createUser(data)
       .then(async (user: any) => {
         let token = await this.Auth.generateToken(user);
-        return HttpResponse.OK(res, { auth: true, token: token });
+        return res.send({ status: true, data: { token } }, 200);
       })
       .catch((err: { msg: any; payload: any }) => {
-        return HttpResponse.UNAUTHORIZED(res, {
-          auth: false,
-          msg: err.msg,
-          error: err.payload,
-        });
+        return res.send(
+          {
+            auth: false,
+            msg: err.msg,
+            error: err.payload,
+          },
+          401,
+        );
       });
   };
 }

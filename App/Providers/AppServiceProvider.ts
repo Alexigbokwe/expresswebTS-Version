@@ -9,7 +9,7 @@ class AppServiceProvicer extends ServiceProvider {
    * @return void
    */
   public register() {
-    this.app.singleton("Authenticator", Authenticator, "class");
+    this.singleton(Authenticator);
   }
 
   /**
@@ -26,7 +26,7 @@ class AppServiceProvicer extends ServiceProvider {
    */
   public async booted() {
     // Documentation endpoint is '/documentationView' for JSON response '/documentationJson'
-    DOCUMENTATION.autoDocumentEndPoints("./Resources", routeDocumentation);
+    DOCUMENTATION.autoDocumentEndPoints("./Resources", routeDocumentation, "http://localhost:5200/");
   }
 }
 

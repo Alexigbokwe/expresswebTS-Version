@@ -1,14 +1,15 @@
 "use strict";
-import FormRequest from "Elucidate/Validator/FormRequest";
 import { Request, Response, NextFunction } from "Elucidate/HttpContext";
+import { MiddlewareHandler } from "Elucidate/MiddlewareHandler";
+import FormRequest from "expresswebcorets/lib/Validator/FormRequest";
 
-class RequestBodyValidator extends FormRequest {
-  async handle(req: Request, res: Response, next: NextFunction) {
-    req.validate = <T>(data: T, rules: object) => {
+class RequestBodyValidator extends MiddlewareHandler {
+  override async preHandle(req: Request, res: Response): Promise<boolean> {
+    req.validate = <T>(data: T, rules: Validator.Rules) => {
       return FormRequest.make<T>(data, rules);
     };
 
-    await next();
+    return true;
   }
 }
 
