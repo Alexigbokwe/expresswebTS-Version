@@ -10,6 +10,7 @@ class CheckForMaintenanceMode extends MiddlewareHandler {
       if (appShutDown.inEndpointsArray(mode.endPoints, req.url) == false) {
         res.send({ data: { message: mode.message }, status: false }, 503);
       }
+      return false;
     }
     return true;
   }

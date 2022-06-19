@@ -12,6 +12,7 @@ class AuthMiddleware extends MiddlewareHandler {
     let result = await this.authenticator.processAuthMW(req.headers["authorization"]);
     if (result.type == "error") {
       res.send({ auth: false, message: result.msg, payload: result.payload }, 401);
+      return false;
     }
 
     req.user = result.payload;
