@@ -1,9 +1,12 @@
-import { Request, Response } from "Elucidate/HttpContext";
+import { Request, Response } from "Config/http";
 import Authenticator from "Elucidate/Auth/Authenticator";
 import { LoginValidation, dataType } from "App/Http/Validation/LoginValidation";
+import { BaseController } from "../BaseController";
 
-class LoginController {
-  constructor(private authenticator: Authenticator) {}
+class LoginController extends BaseController {
+  constructor(private authenticator: Authenticator) {
+    super();
+  }
   /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -16,34 +19,25 @@ class LoginController {
   login = async (req: Request, res: Response) => {
     let validation = await LoginValidation.validate<dataType>(req.body);
     if (validation.success) {
-      return await this.processLogin(validation.data, res);
+      return await this.processLoginData(validation.data, res);
     } else {
-      return res.send({ data: validation, status: false }, 401);
+      return this.response.UNAUTHORIZED(res, { data: validation, status: false });
     }
   };
 
-  /**
-   * Process incoming login data.
-   * @param {object} data
-   * @param {Response} res
-   * @return User
-   */
-  private processLogin = async (data: object, res: Response) => {
+  private processLoginData = async (data: object, res: Response) => {
     return await this.authenticator
       .processLogin(data)
       .then(async (user: object) => {
         let token = await this.authenticator.generateToken(user);
-        return res.send({ data: { token }, status: true }, 200);
+        return this.response.OK(res, { data: { token }, status: true });
       })
       .catch((err: { msg: any; payload: any }) => {
-        return res.send(
-          {
-            auth: false,
-            msg: err.msg,
-            error: err.payload,
-          },
-          400,
-        );
+        return this.response.BAD_REQUEST(res, {
+          auth: false,
+          msg: err.msg,
+          error: err.payload,
+        });
       });
   };
 }

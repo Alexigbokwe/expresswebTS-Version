@@ -1,5 +1,5 @@
 import { Route } from "Elucidate/Route/RouteManager";
-import { Request, Response } from "Elucidate/HttpContext";
+import { Request, Response } from "Config/http";
 
 /*
     |--------------------------------------------------------------------------

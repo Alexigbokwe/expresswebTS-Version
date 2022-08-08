@@ -20,12 +20,11 @@ export default {
     |--------------------------------------------------------------------------
     |
     | This value is the platform your application will run on. ExpressWebJs currently
-    | supports which is Restana and Express. Restana which is the default platform is blazing fast.
+    | supports Express and Restana. Express is the default platform. You can switch to Restana which is blazing fast.
     | You can check the benchmark https://web-frameworks-benchmark.netlify.app/result?f=feathersjs,0http,koa,nestjs-express,express,sails,fastify,nestjs-fastify,restana
-    |
     */
 
-  platform: env("PLATFORM", platform.Restana),
+  platform: env("PLATFORM", platform.Express),
 
   /*
     |--------------------------------------------------------------------------
@@ -38,7 +37,7 @@ export default {
     |
     */
 
-  env: env("APP_ENV", "production"),
+  env: env("APP_ENV", "local"),
 
   /*
     |--------------------------------------------------------------------------
@@ -105,7 +104,6 @@ export default {
      */
     "App/Providers/AppServiceProvider::class",
     "App/Providers/RouteServiceProvider::class",
-    "App/Providers/ShutDownProvider::class",
     //"App/Providers/SocketServiceProvider::class",
   ],
 

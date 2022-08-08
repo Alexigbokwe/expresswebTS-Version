@@ -9,4 +9,4 @@
 */
 import { startApplication, ORM } from "expresswebcorets";
 
-startApplication({ orm: ORM.ObjectionWithKnex });
+startApplication({ orm: ORM.Objection });

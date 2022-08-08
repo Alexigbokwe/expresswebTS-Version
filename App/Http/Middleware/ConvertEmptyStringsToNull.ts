@@ -1,5 +1,5 @@
 "use strict";
-import { Request, Response } from "Elucidate/HttpContext";
+import { Request, Response } from "Config/http";
 import { MiddlewareHandler } from "Elucidate/MiddlewareHandler";
 
 class ConvertEmptyStringsToNull extends MiddlewareHandler {

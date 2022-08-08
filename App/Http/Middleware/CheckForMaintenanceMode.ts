@@ -1,6 +1,7 @@
 "use strict";
 import appShutDown from "Elucidate/App/shutdown";
-import { Request, Response, NextFunction } from "Elucidate/HttpContext";
+import { Request, Response } from "Config/http";
+import { HttpResponse } from "Elucidate/HttpContext";
 import { MiddlewareHandler } from "Elucidate/MiddlewareHandler";
 
 class CheckForMaintenanceMode extends MiddlewareHandler {
@@ -8,7 +9,7 @@ class CheckForMaintenanceMode extends MiddlewareHandler {
     let mode = appShutDown.isDownForMaintenance();
     if (mode.status) {
       if (appShutDown.inEndpointsArray(mode.endPoints, req.url) == false) {
-        res.send({ data: { message: mode.message }, status: false }, 503);
+        HttpResponse.SERVICE_UNAVAILABLE(res, { data: { message: mode.message }, status: false });
       }
       return false;
     }

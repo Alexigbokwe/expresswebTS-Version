@@ -1,5 +1,5 @@
 "use strict";
-import { Request, Response, NextFunction } from "Elucidate/HttpContext";
+import { Request, Response } from "Config/http";
 import { MiddlewareHandler } from "Elucidate/MiddlewareHandler";
 import FormRequest from "Elucidate/Validator/FormRequest";
 
