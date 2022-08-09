@@ -32,10 +32,14 @@ const commands = [
   "ExpressWebJs/commands/make-service",
   "ExpressWebJs/commands/make-job",
   "ExpressWebJs/commands/make-provider",
-  "ExpressWebJs/commands/run-dev",
   "ExpressWebJs/commands/make-rule",
+  "ExpressWebJs/commands/run-dev",
   "ExpressWebJs/commands/run-build",
   "ExpressWebJs/commands/run-start",
+  "ExpressWebJs/commands/run-prod",
+  "ExpressWebJs/commands/make-domain",
+  "ExpressWebJs/commands/domain:make-controller",
+  "ExpressWebJs/commands/domain:make-model",
 ];
 
 export default commands;
