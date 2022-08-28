@@ -22,7 +22,7 @@ export default {
   |
   */
   jwt: {
-    model: "User_model",
+    model: "UserModel",
     driver: "jwt",
     uid: "email",
     password: "password",

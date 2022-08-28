@@ -1,6 +1,6 @@
 "use strict";
 import { env } from "expresswebcorets/lib/Env";
-import { Path } from "Elucidate/Utils/Path";
+import { Path } from "expresswebcorets/lib/Utils/Path";
 export default {
   /*
   |--------------------------------------------------------------------------
