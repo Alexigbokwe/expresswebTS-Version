@@ -7,6 +7,6 @@
 | in the .env file. You are free to configure them. 
 |
 */
-import { startApplication, ORM } from "expresswebcorets";
+import { APP, ORM } from "expresswebcorets";
 
-startApplication({ orm: ORM.Objection });
+APP.start({ orm: ORM.Objection });
