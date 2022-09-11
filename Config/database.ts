@@ -1,7 +1,19 @@
 "use strict";
-import { env } from "expresswebcorets/lib/Env";
+import { env, orm } from "expresswebcorets/lib/Env";
 import { Path } from "expresswebcorets/lib/Utils/Path";
 export default {
+  /*
+  |--------------------------------------------------------------------------
+  | Database ORM
+  |--------------------------------------------------------------------------
+  |
+  | ExpressWeb currently supports the following Object Relational Mappers(ORM)
+  | Objection for sql databases and  Mongoose for mongo DB. You need to select
+  | one depending on the type of database you are working on.
+  |
+  */
+  ORM: env("ORM", orm.Mongoose),
+
   /*
   |--------------------------------------------------------------------------
   | Database Multitenance
@@ -29,7 +41,6 @@ export default {
   |--------------------------------------------------------------------------
   |
   | Here we define connection settings for MySQL database.
-  |
   | npm i --save mysql mysql2
   |
   */
@@ -58,9 +69,7 @@ export default {
   |--------------------------------------------------------------------------
   |
   | Here we define connection settings for PostgreSQL database.
-  |
   | npm i --save pg
-  |
   | npm install --save pg pg-hstore
   |
   */
@@ -89,7 +98,6 @@ export default {
   |--------------------------------------------------------------------------
   |
   | Here we define connection settings for MongoDB database.
-  |
   | npm i --save mongoose
   |
   */
@@ -114,7 +122,6 @@ export default {
   |--------------------------------------------------------------------------
   |
   | Here we define connection settings for Redis database.
-  |
   | npm i --save ioredis
   |
   */
